@@ -1,0 +1,106 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Services 2 Section
+--------------------------------------------------------------*/
+.services-2 {
+  .row {
+    justify-content: center;
+  }
+
+  .service-box {
+    height: 100%;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--surface-color);
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      transition: all 0.3s ease-in-out;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    .service-icon {
+      margin-bottom: 20px;
+      position: relative;
+      font-size: 28px;
+      width: 64px;
+      height: 64px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+      color: var(--accent-color);
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      transition: all 0.3s ease-in-out;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: color-mix(in srgb, var(--accent-color), transparent 85%);
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-size: 15px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .service-btn {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent-color);
+      transition: all 0.3s ease-in-out;
+
+      .service-icon-arrow {
+        margin-left: 8px;
+        font-size: 14px;
+        transition: 0.3s transform ease-in-out;
+      }
+
+      &:hover {
+        .service-icon-arrow {
+          transform: translateX(5px);
+        }
+      }
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+
+      &::after {
+        opacity: 1;
+      }
+
+      .service-icon {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+      }
+
+      h3 {
+        color: var(--accent-color);
+      }
+    }
+  }
+}
